@@ -23,6 +23,8 @@ body {
 }
 
 .form__input-wrapper {
+    position: relative;
+
     min-width: 40%;
     padding: 0.75rem 1rem;
 
@@ -64,10 +66,8 @@ body {
     cursor: pointer;
 }
 
-.form__button:hover,
-.form__button:focus {
+.form__button:hover {
     background: #dd0000;
-    outline: none;
 }
 
 .form__button:active {
@@ -84,6 +84,44 @@ body {
     transform: skewX(45deg);
 }
 
+.form__error {
+    position: absolute;
+    top: -1rem;
+    left: 0.125rem;
+
+    display: none;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fe0000;
+
+    transform: skewX(45deg);
+}
+
+.error {
+    animation: error 200ms ease;
+}
+
+.error .form__error {
+    display: block;
+}
+
+@keyframes error {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25%,
+    75% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
 @media (max-width: 576px) {
     body {
         padding: 5rem 2rem;
@@ -91,7 +129,9 @@ body {
 
     .form__input-wrapper,
     .form__input,
+    .form__error,
     .form__button,
+    .form__button:active,
     .form__button-text {
         transform: skewX(0);
     }
