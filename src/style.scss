@@ -1,3 +1,11 @@
+$pallete-white: #ffffff;
+$pallete-black: #000000;
+$pallete-alto: #dadada;
+$pallete-dove-gray: #707070;
+$pallete-red: #fe0000;
+
+$input-deg: 45deg;
+
 * {
     box-sizing: border-box;
 }
@@ -28,10 +36,11 @@ body {
     min-width: 40%;
     padding: 0.75rem 1rem;
 
-    background: #dadada;
-    border: 0.0625rem solid #ffffff;
+    background: $pallete-white;
+    background: $pallete-alto;
+    border: 0.0625rem solid $pallete-white;
 
-    transform: skewX(-45deg);
+    transform: skewX(-$input-deg);
 }
 
 .form__input {
@@ -40,38 +49,38 @@ body {
     background: transparent;
     border: none;
 
-    transform: skewX(45deg);
-}
+    transform: skewX($input-deg);
 
-.form__input:focus {
-    margin-bottom: -0.0625rem;
+    &:focus {
+        margin-bottom: -0.0625rem;
 
-    border-bottom: 0.0625rem solid #000000;
-    outline: none;
-}
+        border-bottom: 0.0625rem solid $pallete-black;
+        outline: none;
+    }
 
-.form__input::placeholder {
-    color: #707070;
+    &::placeholder {
+        color: $pallete-dove-gray;
+    }
 }
 
 .form__button {
     padding: 0.75rem 2rem;
 
-    background: #fe0000;
-    border: 0.0625rem solid #ffffff;
+    background: $pallete-red;
+    border: 0.0625rem solid $pallete-white;
 
-    transform: skewX(-45deg);
+    transform: skewX(-$input-deg);
     transition: background 200ms ease;
 
     cursor: pointer;
-}
 
-.form__button:hover {
-    background: #dd0000;
-}
+    &:hover {
+        background: darken($color: $pallete-red, $amount: 5);
+    }
 
-.form__button:active {
-    transform: skewX(-45deg) scale(0.99);
+    &:active {
+        transform: skewX(-$input-deg) scale(0.99);
+    }
 }
 
 .form__button-text {
@@ -79,9 +88,9 @@ body {
 
     font-weight: 700;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $pallete-white;
 
-    transform: skewX(45deg);
+    transform: skewX($input-deg);
 }
 
 .form__error {
@@ -93,9 +102,9 @@ body {
 
     font-size: 0.75rem;
     font-weight: 700;
-    color: #fe0000;
+    color: $pallete-red;
 
-    transform: skewX(45deg);
+    transform: skewX($input-deg);
 }
 
 .error {

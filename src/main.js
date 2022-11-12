@@ -1,6 +1,7 @@
+import "./style.scss";
+
 const form = document.querySelector(".form");
 const input = document.querySelector(".form__input");
-const button = document.querySelector(".form__button");
 
 const SERVER_URL = "https://run.mocky.io/v3/b9efe923-cf39-4362-be17-5ad54502fd46";
 
