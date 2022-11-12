@@ -31,6 +31,7 @@ const sendValue = async (value) => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     validateForm(input.value, form, sendValue);
+    input.value = "";
 });
 
 input.addEventListener("input", () => {

@@ -22,6 +22,20 @@ module.exports = (env) => ({
                     "sass-loader",
                 ],
             },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                type: "asset/resource",
+                generator: {
+                    filename: "assets/images/[contenthash][ext][query]",
+                },
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: "asset/resource",
+                generator: {
+                    filename: "assets/fonts/[contenthash][ext][query]",
+                },
+            },
         ],
     },
     plugins: [

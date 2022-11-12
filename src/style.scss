@@ -1,3 +1,10 @@
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
 $pallete-white: #ffffff;
 $pallete-black: #000000;
 $pallete-alto: #dadada;
@@ -11,6 +18,10 @@ $input-deg: 45deg;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
     width: 100vw;
     height: 100vh;
 
@@ -64,6 +75,10 @@ body {
 }
 
 .form__button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
     padding: 0.75rem 2rem;
 
     background: $pallete-red;
@@ -79,7 +94,7 @@ body {
     }
 
     &:active {
-        transform: skewX(-$input-deg) scale(0.99);
+        background: darken($color: $pallete-red, $amount: 10);
     }
 }
 
@@ -90,6 +105,11 @@ body {
     text-transform: uppercase;
     color: $pallete-white;
 
+    transform: skewX($input-deg);
+}
+
+.form__button-icon {
+    color: $pallete-white;
     transform: skewX($input-deg);
 }
 
